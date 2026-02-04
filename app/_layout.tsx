@@ -1,10 +1,3 @@
-import { Slot, useRouter, useSegments } from "expo-router";
-import { useEffect } from "react";
-import { View } from "react-native";
-import { AuthProvider, useAuth } from "../context/auth";
-import "../global.css";
-
-// 👇 1. Imports novos (NativeWind + Fontes + Splash)
 import {
   PlusJakartaSans_400Regular,
   PlusJakartaSans_500Medium,
@@ -12,10 +5,22 @@ import {
   PlusJakartaSans_700Bold,
   useFonts,
 } from "@expo-google-fonts/plus-jakarta-sans";
+import { Slot, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useColorScheme } from "nativewind"; // Corrigido para vir do NativeWind
+import { useColorScheme } from "nativewind";
+import { useEffect } from "react";
+import { View } from "react-native";
+import { AuthProvider, useAuth } from "../context/auth";
+import "../global.css";
 
-// 👇 2. Mantém a tela de Splash visível enquanto o app carrega
+// 👇 1. Importe as coisas de tema do Navigation
+import {
+  DarkTheme,
+  DefaultTheme,
+  Theme,
+  ThemeProvider,
+} from "@react-navigation/native";
+
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutNav() {
@@ -24,11 +29,27 @@ function RootLayoutNav() {
   const segments = useSegments();
   const router = useRouter();
 
+  // 👇 2. Crie os temas customizados com AS SUAS CORES EXATAS
+  // Isso garante que o fundo da animação seja idêntico ao fundo da tela
+  const MyDarkTheme: Theme = {
+    ...DarkTheme,
+    colors: {
+      ...DarkTheme.colors,
+      background: "#121215", // Sua cor dark (--background)
+    },
+  };
+
+  const MyLightTheme: Theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: "#F2F4F7", // Sua cor light (--background)
+    },
+  };
+
   useEffect(() => {
     if (isLoading) return;
-
     const inAuthGroup = segments[0] === "(auth)";
-
     if (!user && !inAuthGroup) {
       router.replace("/(auth)/login");
     } else if (user && inAuthGroup) {
@@ -37,15 +58,16 @@ function RootLayoutNav() {
   }, [user, isLoading, segments]);
 
   return (
-    // A classe 'dark' ou 'light' será injetada aqui pelo colorScheme
-    <View className={`flex-1 ${colorScheme}`}>
-      <Slot />
-    </View>
+    // 👇 3. Envolva tudo com o ThemeProvider passando o tema correto
+    <ThemeProvider value={colorScheme === "dark" ? MyDarkTheme : MyLightTheme}>
+      <View className={`flex-1 ${colorScheme}`}>
+        <Slot />
+      </View>
+    </ThemeProvider>
   );
 }
 
 export default function RootLayout() {
-  // 👇 3. Hook para carregar as fontes na memória
   const [fontsLoaded] = useFonts({
     PlusJakartaSans_400Regular,
     PlusJakartaSans_500Medium,
@@ -59,9 +81,7 @@ export default function RootLayout() {
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  if (!fontsLoaded) return null;
 
   return (
     <AuthProvider>

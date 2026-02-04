@@ -6,7 +6,7 @@ export default function Register() {
   const router = useRouter();
 
   return (
-    <View className="flex-1 bg-background px-6 pt-12 bg-background">
+    <View className="flex-1 px-6 pt-12 bg-background">
       {/* Botão Voltar Customizado */}
       <TouchableOpacity onPress={() => router.back()} className="mb-6">
         <Text className="typo-body font-bold text-primary">← Voltar</Text>
