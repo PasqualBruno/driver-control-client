@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 242 244 247;
+    --card: 255 255 255;
+
+    --text-primary: 255 127 50;
+    --text-title: 26 32 44;
+    --text-body: 75 85 99;
+    --text-secondary: 156 163 175;
+
+    --primary: 255 127 50;
+    --border: 229 231 235;
+  }
+
+  .dark:root {
+    --background: 18 18 21;
+    --card: 30 30 34;
+
+    --text-primary: 255 127 50;
+    --text-title: 255 255 255;
+    --text-body: 209 213 219;
+    --text-secondary: 107 114 128;
+
+    --primary: 255 127 50;
+    --border: 45 45 48;
+  }
+}
