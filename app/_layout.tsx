@@ -1,9 +1,11 @@
 import { Slot, useRouter, useSegments } from "expo-router";
 import { useEffect } from "react";
+import { useColorScheme, View } from "react-native";
 import { AuthProvider, useAuth } from "../context/auth";
 import "../global.css";
 
 function RootLayoutNav() {
+  const { colorScheme } = useColorScheme();
   const { user, isLoading } = useAuth();
   const segments = useSegments();
   const router = useRouter();
@@ -20,7 +22,11 @@ function RootLayoutNav() {
     }
   }, [user, isLoading, segments]);
 
-  return <Slot />;
+  return (
+    <View className={`flex-1 ${colorScheme}`}>
+      <Slot />
+    </View>
+  );
 }
 
 export default function RootLayout() {
