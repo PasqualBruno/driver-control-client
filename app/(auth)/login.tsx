@@ -1,10 +1,12 @@
 import { useAuth } from "@/context/auth";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
   const { signIn } = useAuth();
+  const router = useRouter();
 
   const handleLogin = () => {};
 
@@ -43,10 +45,10 @@ export default function Login() {
           <Text className=" font-bold text-lg">Entrar</Text>
         </TouchableOpacity>
       </View>
-      <View className="flex flex-row items-baseline gap-x-2 justify-center ">
-        <Text className="typo-subtitle  ">Ainda nao possui uma conta?</Text>
-        <TouchableOpacity className="text-txt-primary">
-          <Text className="text-txt-primary flex t-body">Cadastre-se</Text>
+      <View className="flex-row justify-center mt-6">
+        <Text className="typo-body">Não tem conta? </Text>
+        <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
+          <Text className="typo-body font-bold text-primary">Crie agora</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

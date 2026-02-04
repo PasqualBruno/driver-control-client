@@ -1,14 +1,18 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Text, TouchableOpacity, View } from "react-native";
+// Se estiver usando ícones: import { Ionicons } from '@expo/vector-icons';
 
-const register = () => {
+export default function Register() {
+  const router = useRouter();
+
   return (
-    <View>
-      <Text>register</Text>
+    <View className="flex-1 bg-background px-6 pt-12 bg-background">
+      {/* Botão Voltar Customizado */}
+      <TouchableOpacity onPress={() => router.back()} className="mb-6">
+        <Text className="typo-body font-bold text-primary">← Voltar</Text>
+      </TouchableOpacity>
+
+      {/* ... Resto do registro ... */}
     </View>
   );
-};
-
-export default register;
-
-const styles = StyleSheet.create({});
+}

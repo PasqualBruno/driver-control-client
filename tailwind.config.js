@@ -6,6 +6,12 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      fontFamily: {
+        regular: ["PlusJakartaSans_400Regular"],
+        medium: ["PlusJakartaSans_500Medium"],
+        bold: ["PlusJakartaSans_700Bold"],
+        sans: ["PlusJakartaSans_400Regular"],
+      },
       colors: {
         background: "rgb(var(--background))",
         card: "rgb(var(--card))",

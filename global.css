@@ -7,10 +7,10 @@
     --background: 242 244 247;
     --card: 255 255 255;
 
-    --text-primary: 255 127 50;
-    --text-title: 26 32 44;
-    --text-body: 75 85 99;
-    --text-secondary: 156 163 175;
+    --text-primary: 255 127 50; /* Laranja */
+    --text-title: 26 32 44; /* Escuro (quase preto) */
+    --text-body: 75 85 99; /* Cinza Médio */
+    --text-secondary: 156 163 175; /* Cinza Claro */
 
     --primary: 255 127 50;
     --border: 229 231 235;
@@ -21,7 +21,7 @@
     --card: 30 30 34;
 
     --text-primary: 255 127 50;
-    --text-title: 255 255 255;
+    --text-title: 255 255 255; /* Branco no modo escuro */
     --text-body: 209 213 219;
     --text-secondary: 107 114 128;
 
@@ -32,28 +32,32 @@
 
 @layer components {
   /* TÍTULO PRINCIPAL (Welcome Back) */
-  /* Aumentei para text-4xl para ficar bem grande igual na referência */
+  /* Adicionado 'font-bold' para puxar a PlusJakartaSans_700Bold */
   .typo-h1 {
-    @apply text-txt-title text-4xl font-bold leading-tight;
+    @apply font-bold text-txt-title text-4xl leading-tight;
   }
 
   /* SUBTÍTULO (Let's continue...) */
-  /* O segredo aqui: cor cinza (secondary) e fonte NORMAL (não bold) */
+  /* Adicionado 'font-regular' para puxar a PlusJakartaSans_400Regular */
   .typo-subtitle {
-    @apply text-txt-secondary text-lg font-normal mt-2;
+    @apply font-regular text-txt-secondary text-lg mt-2;
   }
 
+  /* CORPO DE TEXTO */
+  /* Adicionado 'font-regular' */
   .typo-body {
-    @apply text-txt-body text-base font-normal leading-relaxed;
+    @apply font-regular text-txt-body text-base leading-relaxed;
   }
+
   /* INPUT TEXT */
-  /* Texto dentro dos campos */
+  /* Adicionado 'font-medium' para melhor leitura ao digitar (PlusJakartaSans_500Medium) */
   .typo-input {
-    @apply text-txt-body text-base font-medium;
+    @apply font-medium text-txt-body text-base;
   }
 
   /* TEXTO DO BOTÃO */
+  /* Adicionado 'font-bold' */
   .typo-btn-text {
-    @apply text-txt-title font-bold text-lg;
+    @apply font-bold text-txt-title text-lg;
   }
 }
