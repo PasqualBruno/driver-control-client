@@ -1,7 +1,8 @@
 import { useAuth } from "@/context/auth";
+import FormLogin from "@/src/components/form/FormLogin";
 import { useRouter } from "expo-router";
 import React from "react";
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
@@ -20,23 +21,19 @@ export default function Login() {
           />
         </View>
 
-        <View className="mt-16">
+        <View className="mt-24">
           <Text className="typo-h1 mb-0">
             Bem vindo de <Text className="text-txt-primary">volta</Text>{" "}
           </Text>
           <Text className="typo-subtitle">Vamos continuar nossa jornada</Text>
         </View>
 
-        <View className="flex flex-col ">
-          <TextInput
-            placeholder="Email"
-            className="bg-card px-4 py-3 rounded-lg mt-8 text-txt-body placeholder:text-txt-secondary"
-          />
-          <TextInput
-            placeholder="Email"
-            className="bg-card px-4 py-3 rounded-lg mt-8 text-txt-body placeholder:text-txt-secondary"
-          />
-        </View>
+        {/* <View className="flex flex-col ">
+          <CustomInput label="Email" placeholder="Digite seu" />
+          <CustomInput label="Senha" placeholder="Digite sua senha" />
+        </View> */}
+
+        <FormLogin />
 
         <TouchableOpacity
           onPress={signIn}
