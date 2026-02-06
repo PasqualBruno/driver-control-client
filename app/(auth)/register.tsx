@@ -1,3 +1,4 @@
+import FormSignUp from "@/src/components/form/FormSignUp/FormSignUp";
 import { useRouter } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 // Se estiver usando ícones: import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +13,7 @@ export default function Register() {
         <Text className="typo-body font-bold text-primary">← Voltar</Text>
       </TouchableOpacity>
 
-      {/* ... Resto do registro ... */}
+      <FormSignUp />
     </View>
   );
 }
