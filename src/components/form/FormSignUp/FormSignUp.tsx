@@ -13,7 +13,7 @@ const FormSignUp = () => {
   async function onSubmit(data: FormSignUpSchema) {
     console.log(data);
   }
-
+  // as
   return (
     <View>
       <Controller
