@@ -12,7 +12,7 @@ export default function Login() {
   const handleLogin = () => {};
 
   return (
-    <SafeAreaView className="flex-1 px-8 bg-background flex-col justify-between ">
+    <SafeAreaView className="flex-1 px-8 bg-surface-page flex-col justify-between ">
       <View className="flex-1 flex">
         <View className="flex items-center flex-row  justify-center gap-x-4 mt-8 ">
           <Image
@@ -23,29 +23,24 @@ export default function Login() {
 
         <View className="mt-24">
           <Text className="typo-h1 mb-0">
-            Bem vindo de <Text className="text-txt-primary">volta</Text>{" "}
+            Bem vindo de <Text className="text-txt-action">volta</Text>{" "}
           </Text>
-          <Text className="typo-subtitle">Vamos continuar nossa jornada</Text>
+          <Text className="typo-body-md">Vamos continuar nossa jornada</Text>
         </View>
-
-        {/* <View className="flex flex-col ">
-          <CustomInput label="Email" placeholder="Digite seu" />
-          <CustomInput label="Senha" placeholder="Digite sua senha" />
-        </View> */}
 
         <FormLogin />
 
         <TouchableOpacity
           onPress={signIn}
-          className="bg-primary px-8 py-3 rounded-lg mt-8 flex items-center justify-center"
+          className="bg-action px-8 py-3 rounded-lg mt-8 flex items-center justify-center"
         >
-          <Text className=" font-bold text-lg">Entrar</Text>
+          <Text className=" font-bold text-lg text-txt-on-action">Entrar</Text>
         </TouchableOpacity>
       </View>
       <View className="flex-row justify-center mt-6">
         <Text className="typo-body">Não tem conta? </Text>
         <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
-          <Text className="typo-body font-bold text-primary">Crie agora</Text>
+          <Text className="typo-body  font-bold text-primary">Crie agora</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -1,7 +1,5 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-
   content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
@@ -12,25 +10,82 @@ module.exports = {
         bold: ["PlusJakartaSans_700Bold"],
         sans: ["PlusJakartaSans_400Regular"],
       },
+      fontSize: {
+        h1: ["60px", "66px"],
+        h2: ["48px", "52.8px"],
+        h3: ["40px", "44px"],
+        h4: ["32px", "35.2px"],
+        h5: ["24px", "26.4px"],
+        "body-lg": ["20px", "22px"],
+        "body-md": ["16px", "17.6px"],
+        "body-sm": ["14px", "15.4px"],
+        "body-xsm": ["12px", "13.2px"],
+      },
       colors: {
-        background: "rgb(var(--background))",
-        card: "rgb(var(--card))",
-
-        // Configuração de Texto Atualizada
-        txt: {
-          primary: "rgb(var(--text-primary))", // Laranja (Sua marca)
-          title: "rgb(var(--text-title))", // Preto Forte / Branco (Títulos)
-          body: "rgb(var(--text-body))", // Cinza Escuro / Cinza Claro (Texto comum)
-
-          // O DEFAULT permite usar apenas "text-txt".
-          // Apontei para "body" pois é o mais seguro para textos gerais.
-          DEFAULT: "rgb(var(--text-body))",
-
-          secondary: "rgb(var(--text-secondary))", // Cinza Claro (Legendas)
+        surface: {
+          page: "var(--page)",
+          "card-darker": "var(--card-darker)",
+          card: "var(--card)",
+          "card-lighter": "var(--card-lighter)",
+          action: "var(--action)",
+          "action-pressed": "var(--action-pressed)",
+          "action-hover": "var(--action-hover)",
+          "action-hover-light": "var(--action-hover-light)",
+          success: "var(--success)",
+          warning: "var(--warning)",
+          information: "var(--information)",
+          error: "var(--error)",
+          disabled: "var(--disabled)",
         },
-
-        primary: "rgb(var(--primary))",
-        border: "rgb(var(--border))",
+        icon: {
+          DEFAULT: "var(--icon-default)",
+          "no-selected": "var(--icon-no-selected)",
+          selected: "var(--icon-selected)",
+          action: "var(--icon-action)",
+          "action-hover": "var(--icon-action-hover)",
+          "action-hover-light": "var(--icon-action-hover-light)",
+          "on-action": "var(--icon-on-action)",
+          disabled: "var(--icon-disabled)",
+          information: "var(--icon-information)",
+          warning: "var(--icon-warning)",
+          success: "var(--icon-success)",
+          error: "var(--icon-error)",
+          receita: "var(--icon-receita)",
+          despesa: "var(--icon-despesa)",
+        },
+        txt: {
+          DEFAULT: "var(--text-body)",
+          headings: "var(--text-headings)",
+          body: "var(--text-body)",
+          labels: "var(--text-labels)",
+          placeholder: "var(--text-placeholder)",
+          selected: "var(--text-selected)",
+          action: "var(--text-action)",
+          "action-pressed": "var(--text-action-pressed)",
+          disabled: "var(--text-disabled)",
+          "on-action": "var(--text-on-action)",
+        },
+        action: {
+          DEFAULT: "var(--action)",
+          pressed: "var(--action-pressed)",
+          hover: "var(--action-hover)",
+          "hover-light": "var(--action-hover-light)",
+        },
+        primary: "var(--action)",
+        border: {
+          light: "var(--border-light)",
+          DEFAULT: "var(--border-default)",
+          disabled: "var(--border-disabled)",
+          darker: "var(--border-darker)",
+          success: "var(--border-success)",
+          information: "var(--border-information)",
+          warning: "var(--border-warning)",
+          error: "var(--border-error)",
+          action: "var(--border-action)",
+          pressed: "var(--border-pressed)",
+          "action-hover": "var(--border-action-hover)",
+          focus: "var(--border-focus)",
+        },
       },
     },
   },

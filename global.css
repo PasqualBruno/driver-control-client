@@ -4,60 +4,197 @@
 
 @layer base {
   :root {
-    --background: 242 244 247;
-    --card: 255 255 255;
+    /* SURFACES */
+    --page: #fefefe;
+    --card-darker: #f6f6f6;
+    --card: #fafafa;
+    --card-lighter: #fcfcfc;
+    --action: #03593d;
+    --action-pressed: #023d29;
+    --action-hover: #03593d;
+    --action-hover-light: #bdffdf;
+    --disabled: #eae9e9;
+    --success: #dcfce7;
+    --warning: #fffbeb;
+    --information: #eff6ff;
+    --error: #fef2f2;
 
-    --text-primary: 255 127 50; /* Laranja */
-    --text-title: 26 32 44; /* Escuro (quase preto) */
-    --text-body: 75 85 99; /* Cinza Médio */
-    --text-secondary: 156 163 175; /* Cinza Claro */
+    /* TEXT */
+    --text-headings: #111111;
+    --text-body: #353535;
+    --text-labels: #4b4b4b;
+    --text-placeholder: #666666;
+    --text-selected: #1d1d1d;
+    --text-action: #0ab17c;
+    --text-action-pressed: #03593d;
+    --text-disabled: #666666;
+    --text-on-action: #bdffdf;
+    --text-success: #109204;
+    --text-warning: #ff6b00;
+    --text-info: #4047ff;
+    --text-error: #ff4040;
 
-    --primary: 255 127 50;
-    --border: 229 231 235;
+    /* ICONS */
+    --icon-default: #353535;
+    --icon-no-selected: #666666;
+    --icon-selected: #1d1d1d;
+    --icon-action: #079669;
+    --icon-action-hover: #047753;
+    --icon-action-hover-light: #047753;
+    --icon-on-action: #bdffdf;
+    --icon-disabled: #989898;
+    --icon-information: #eff6ff;
+    --icon-warning: #fffbeb;
+    --icon-success: #dcfce7;
+    --icon-error: #fef2f2;
+    --icon-receita: #dcfce7;
+    --icon-despesa: #fef2f2;
+
+    /* BORDERS */
+    --border-light: #f1f1f1;
+    --border-default: #e5e5e5;
+    --border-disabled: #989898;
+    --border-darker: #818181;
+    --border-success: #bbf7d0;
+    --border-information: #bfdbfe;
+    --border-warning: #fde68a;
+    --border-error: #f87171;
+    --border-action: #047753;
+    --border-pressed: #03593d;
+    --border-action-hover: #0acc90;
+    --border-focus: #079669;
   }
 
   .dark:root {
-    --background: 18 18 21;
-    --card: 30 30 34;
+    /* SURFACES */
+    --page: #111111;
+    --card-darker: #1d1d1d;
+    --card: #353535;
+    --card-lighter: #4b4b4b;
+    --action: #03593d;
+    --action-pressed: #023d29;
+    --action-hover: #03593d;
+    --action-hover-light: #002316;
+    --disabled: #35353580;
+    --success: #166534;
+    --warning: #92400e;
+    --information: #1e40af;
+    --error: #991b1b;
 
-    --text-primary: 255 127 50;
-    --text-title: 255 255 255; /* Branco no modo escuro */
-    --text-body: 209 213 219;
-    --text-secondary: 107 114 128;
+    /* TEXT */
+    --text-headings: #fefefe;
+    --text-body: #e5e5e5;
+    --text-labels: #cccccc;
+    --text-placeholder: #b0b0b0;
+    --text-selected: #f1f1f1;
+    --text-action: #047753;
+    --text-action-pressed: #0ab17c;
+    --text-disabled: #989898;
+    --text-on-action: #bdffdf;
+    --text-success: #70be68;
+    --text-warning: #ffb580;
+    --text-info: #bfc2ff;
+    --text-error: #ffbfbf;
 
-    --primary: 255 127 50;
-    --border: 45 45 48;
+    /* ICONS */
+    --icon-default: #cccccc;
+    --icon-no-selected: #a3a3a3;
+    --icon-selected: #f1f1f1;
+    --icon-action: #0ab17c;
+    --icon-action-hover: #6cffc2;
+    --icon-action-hover-light: #6cffc2;
+    --icon-on-action: #bdffdf;
+    --icon-disabled: #989898;
+    --icon-information: #1e40af;
+    --icon-warning: #92400e;
+    --icon-success: #166534;
+    --icon-error: #991b1b;
+    --icon-receita: #166534;
+    --icon-despesa: #991b1b;
+
+    /* BORDERS */
+    --border-light: #353535;
+    --border-default: #353535;
+    --border-disabled: #818181;
+    --border-darker: #1d1d1d;
+    --border-success: #16a34a;
+    --border-information: #2563eb;
+    --border-warning: #d97706;
+    --border-error: #dc2626;
+    --border-action: #0ab17c;
+    --border-pressed: #079669;
+    --border-action-hover: #0acc90;
+    --border-focus: #079669;
   }
 }
 
 @layer components {
-  /* TÍTULO PRINCIPAL (Welcome Back) */
-  /* Adicionado 'font-bold' para puxar a PlusJakartaSans_700Bold */
-  .typo-h1 {
-    @apply font-bold text-txt-title text-4xl leading-tight;
+  .typo-big-title {
+    @apply font-semibold text-txt-headings text-4xl;
+  }
+  .typo-title {
+    @apply font-semibold text-txt-headings text-2xl;
   }
 
-  /* SUBTÍTULO (Let's continue...) */
-  /* Adicionado 'font-regular' para puxar a PlusJakartaSans_400Regular */
   .typo-subtitle {
-    @apply font-regular text-txt-secondary text-lg mt-2;
+    @apply font-semibold text-txt-body text-xl;
   }
 
-  /* CORPO DE TEXTO */
-  /* Adicionado 'font-regular' */
+  .typo-body {
+    @apply font-regular text-txt-body text-base;
+  }
+
+  .typo-disabled {
+    @apply font-regular text-txt-disabled text-base;
+  }
+
+  .typo-placeholder {
+    @apply font-regular text-txt-placeholder text-base;
+  }
+
+  .typo-labels {
+    @apply font-semibold text-txt-labels text-sm;
+  }
+
+  .typo-error {
+    @apply font-regular text-txt-error text-body-xsm;
+  }
+
+  .typo-success {
+    @apply font-semibold text-txt-success text-body-sm;
+  }
+  .typo-warning {
+    @apply font-semibold text-txt text-body-sm;
+  }
+  .typo-info {
+    @apply font-semibold text-txt-success text-body-sm;
+  }
+  .typo-error {
+    @apply font-semibold text-txt-success text-body-sm;
+  }
+
+  /* .typo-h5 {
+    @apply font-semibold text-txt-headings text-2xl leading-6;
+  }
+
+  .typo-body-md {
+    @apply font-regular text-txt-body text-body-md leading-4;
+  }
+
+  .typo-subtitle {
+    @apply font-regular text-txt-labels text-lg mt-2;
+  }
+
   .typo-body {
     @apply font-regular text-txt-body text-base leading-relaxed;
   }
 
-  /* INPUT TEXT */
-  /* Adicionado 'font-medium' para melhor leitura ao digitar (PlusJakartaSans_500Medium) */
   .typo-input {
     @apply font-medium text-txt-body text-base;
   }
 
-  /* TEXTO DO BOTÃO */
-  /* Adicionado 'font-bold' */
   .typo-btn-text {
-    @apply font-bold text-txt-title text-lg;
+    @apply font-bold text-txt-headings text-lg;
   }
+} */
 }
