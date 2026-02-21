@@ -21,11 +21,23 @@ export default function Login() {
           />
         </View>
 
-        <View className="mt-24">
+        <View className="mt-24 bg-surface-card-darker">
           <Text className="typo-h1 mb-0">
             Bem vindo de <Text className="text-txt-action">volta</Text>{" "}
           </Text>
           <Text className="typo-body-md">Vamos continuar nossa jornada</Text>
+
+          <Text className="typo-big-title">typo-big-title</Text>
+          <Text className="typo-title">typo-title</Text>
+          <Text className="typo-subtitle">typo-subtitle</Text>
+          <Text className="typo-body">typo-body</Text>
+          <Text className="typo-disabled">typo-disabled</Text>
+          <Text className="typo-placeholder">typo-placeholder</Text>
+          <Text className="typo-labels">typo-labels</Text>
+          <Text className="typo-success">typo-success</Text>
+          <Text className="typo-warning">typo-warning</Text>
+          <Text className="typo-info">typo-info</Text>
+          <Text className="typo-error">typo-error</Text>
         </View>
 
         <FormLogin />

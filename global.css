@@ -164,37 +164,12 @@
     @apply font-semibold text-txt-success text-body-sm;
   }
   .typo-warning {
-    @apply font-semibold text-txt text-body-sm;
+    @apply font-semibold text-txt-warning text-body-sm;
   }
   .typo-info {
-    @apply font-semibold text-txt-success text-body-sm;
+    @apply font-semibold text-txt-information text-body-sm;
   }
   .typo-error {
-    @apply font-semibold text-txt-success text-body-sm;
+    @apply font-semibold text-txt-error text-body-sm;
   }
-
-  /* .typo-h5 {
-    @apply font-semibold text-txt-headings text-2xl leading-6;
-  }
-
-  .typo-body-md {
-    @apply font-regular text-txt-body text-body-md leading-4;
-  }
-
-  .typo-subtitle {
-    @apply font-regular text-txt-labels text-lg mt-2;
-  }
-
-  .typo-body {
-    @apply font-regular text-txt-body text-base leading-relaxed;
-  }
-
-  .typo-input {
-    @apply font-medium text-txt-body text-base;
-  }
-
-  .typo-btn-text {
-    @apply font-bold text-txt-headings text-lg;
-  }
-} */
 }

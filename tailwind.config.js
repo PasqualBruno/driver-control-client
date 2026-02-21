@@ -64,6 +64,10 @@ module.exports = {
           "action-pressed": "var(--text-action-pressed)",
           disabled: "var(--text-disabled)",
           "on-action": "var(--text-on-action)",
+          success: "var(--text-success)",
+          warning: "var(--text-warning)",
+          information: "var(--text-info)",
+          error: "var(--text-error)",
         },
         action: {
           DEFAULT: "var(--action)",
